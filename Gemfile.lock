@@ -8,6 +8,7 @@ GEM
   specs:
     diff-lcs (1.2.5)
     rake (11.3.0)
+    rb-readline (0.5.3)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -29,6 +30,7 @@ DEPENDENCIES
   bundler (~> 1.12)
   eliza!
   rake (~> 11.0)
+  rb-readline
   rspec (~> 3.0)
 
 BUNDLED WITH
