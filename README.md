@@ -1,4 +1,4 @@
-A Ruby implementation Joseph Weizenbaum's ELIZA
+A Ruby implementation Joseph Weizenbaum's ELIZA, your friendly neighborhood robo Rogerian psychotherapist.
 
 ## References
 
