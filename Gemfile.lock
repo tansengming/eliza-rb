@@ -1,0 +1,48 @@
+PATH
+  remote: .
+  specs:
+    eliza (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    awesome_print (1.7.0)
+    diff-lcs (1.2.5)
+    fuubar (2.0.0)
+      rspec (~> 3.0)
+      ruby-progressbar (~> 1.4)
+    rake (11.3.0)
+    rb-readline (0.5.3)
+    rspec (3.5.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
+    rspec-core (3.5.4)
+      rspec-support (~> 3.5.0)
+    rspec-expectations (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-mocks (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-support (3.5.0)
+    ruby-progressbar (1.8.1)
+    tapp (1.5.0)
+      thor
+    thor (0.19.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  awesome_print
+  bundler
+  eliza!
+  fuubar
+  rake
+  rb-readline
+  rspec
+  tapp
+
+BUNDLED WITH
+   1.13.3
