@@ -9,10 +9,6 @@ module Eliza
     end
 
     private
-    def initial_phrases
-      YAML.load(initial_phrases_yaml_path.read)
-    end
-
     def data_path
       @data_path ||= Pathname.new('lib/data/data.yml')
     end
