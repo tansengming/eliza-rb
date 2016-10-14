@@ -5,8 +5,7 @@ describe Eliza::Bot do
     subject { bot.transform input }
 
     context 'when input has a quit word' do
-      let(:input) { %q{Bye! its been good talking to you. } }
-
+      let(:input) { 'Bye! its been good talking to you.' }
       it { should match /Goodbye/ }
     end
   end

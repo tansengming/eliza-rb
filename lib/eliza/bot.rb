@@ -3,11 +3,10 @@ module Eliza
     def transform(input)
       normalized_input = normalize_text(input)
 
-      normalized_input.split('.').map{|text| Sentence.new(text) }.each do |sentence|
-        return final_phrase if sentence.quit?
+      # TODO: try not do transform all the sentences
+      reply = normalized_input.split('.').map{|text| Sentence.new(text) }.map(&:transform).compact.first
 
-        'Standard Reply'
-      end
+      reply || 'Standard Reply'
     end
 
     def initial_phrase

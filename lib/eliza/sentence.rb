@@ -6,11 +6,23 @@ module Eliza
       @text = text
     end
 
+    def transform
+      if quit?
+        final_phrase
+      else
+        nil
+      end
+    end
+
+    private
+    def final_phrase
+      data['finals'].sample
+    end
+
     def quit?
       data['quit_words'].find{|quit_word| text.include? quit_word }
     end
 
-    private
     def data
       @data ||= Module.nesting.last.config.data
     end
