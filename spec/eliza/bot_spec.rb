@@ -5,4 +5,9 @@ describe Eliza::Bot do
     subject { bot.initial_phrase }
     it { should_not be_empty }
   end
+
+  describe '#final_phrase' do
+    subject { bot.final_phrase }
+    it { should_not be_empty }
+  end
 end
