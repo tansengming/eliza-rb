@@ -9,12 +9,30 @@ module Eliza
     def transform
       if quit?
         final_phrase
+      elsif keyword
+        transform_by_rule
       else
         nil
       end
     end
 
     private
+    def transform_by_rule
+      rule['reasmb'].sample
+    end
+
+    def rule
+      data['keywords'].find{|h| h['keyword'] == keyword}.fetch('rules').first
+    end
+
+    def keyword
+      text[/\b(#{eliza_keywords.join('|')})\b/]
+    end
+
+    def eliza_keywords
+      data['keywords'].map{|h| h['keyword'] }
+    end
+
     def final_phrase
       data['finals'].sample
     end
