@@ -9,13 +9,13 @@ TBD
 # Usage
 
 ```ruby
-eliza   = ElizaBot.new
+eliza   = Eliza::Bot.new
 initial = eliza.initial_phrase
 reply   = eliza.transform(input_string)
 
  # `#transform` returns a final phrase in case of a quit phrase
  # but you can also get a final phrase with:
- final = eliza.final_phrase
+ final  = eliza.final_phrase
 ```
 
 # References
