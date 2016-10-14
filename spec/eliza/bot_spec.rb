@@ -8,6 +8,6 @@ describe Eliza::Bot do
 
   describe '#final_phrase' do
     subject { bot.final_phrase }
-    it { should_not be_empty }
+    it { should match /Goodbye/ }
   end
 end
