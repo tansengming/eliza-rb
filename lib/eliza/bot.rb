@@ -28,12 +28,8 @@ module Eliza
           .gsub(/\s{2,}/, ' ')
     end
 
-    def data_path
-      @data_path ||= Pathname.new('lib/data/data.yml')
-    end
-
     def data
-      @data ||= YAML.load(data_path.read)
+      @data ||= Module.nesting.last.config.data
     end
   end
 end
