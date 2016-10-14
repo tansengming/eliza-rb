@@ -1,5 +1,15 @@
 module Eliza
   class Bot
+    def transform(input)
+      normalized_input = normalize_text(input)
+
+      normalized_input.split('.').map{|text| Sentence.new(text) }.each do |sentence|
+        return final_phrase if sentence.quit?
+
+        'Standard Reply'
+      end
+    end
+
     def initial_phrase
       data['initials'].sample
     end
@@ -9,12 +19,17 @@ module Eliza
     end
 
     private
-    def data_path
-      @data_path ||= Pathname.new('lib/data/data.yml')
+    def normalize_text(text)
+      text.downcase
+          .gsub(/@#\$%\^&\*\(\)_\+=~`\{\[\}\]\|:;<>\/\\\t/, ' ')
+          .gsub(/\s+-+\s+/, '.')
+          .gsub(/\s*[,\.\?!;]+\s*/, '.')
+          .gsub(/\s*\bbut\b\s*/, '.')
+          .gsub(/\s{2,}/, ' ')
     end
 
     def data
-      @data ||= YAML.load(data_path.read)
+      @data ||= Module.nesting.last.config.data
     end
   end
 end

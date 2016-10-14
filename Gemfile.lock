@@ -9,12 +9,18 @@ GEM
     awesome_print (1.7.0)
     codeclimate-test-reporter (0.5.2)
       simplecov (>= 0.7.1, < 1.0.0)
+    coderay (1.1.1)
     diff-lcs (1.2.5)
     docile (1.1.5)
     fuubar (2.0.0)
       rspec (~> 3.0)
       ruby-progressbar (~> 1.4)
     json (1.8.3)
+    method_source (0.8.2)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rake (11.3.0)
     rb-readline (0.5.3)
     rspec (3.5.0)
@@ -36,6 +42,7 @@ GEM
       json (~> 1.8)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
+    slop (3.6.0)
     tapp (1.5.0)
       thor
     thor (0.19.1)
@@ -50,6 +57,7 @@ DEPENDENCIES
   codeclimate-test-reporter
   eliza!
   fuubar
+  pry
   rake
   rb-readline
   rspec
