@@ -1,0 +1,9 @@
+keywords:
+  - keyword: sorry
+    rank: 0
+    rules:
+      - decomp: '*'
+        reasmb:
+          - Please don't apologise.
+quit_words:
+  - bye

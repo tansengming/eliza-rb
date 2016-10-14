@@ -14,3 +14,10 @@ quit_words:
   - done
   - exit
   - quit
+keywords:
+  - keyword: sorry
+    rank: 0
+    rules:
+      - decomp: '*'
+        reasmb:
+          - Please don't apologise.

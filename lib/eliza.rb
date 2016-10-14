@@ -13,6 +13,11 @@ module Eliza
       @data_path = 'lib/data/data.yml'
     end
 
+    def reset
+      @data = nil
+      @data_path = 'lib/data/data.yml'
+    end
+
     def data_pathname
       Pathname.new(data_path)
     end
