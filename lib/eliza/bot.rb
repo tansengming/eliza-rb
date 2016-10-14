@@ -1,14 +1,11 @@
 module Eliza
   class Bot
-    def initialize
-    end
-
     def initial_phrase
-      initial_phrases.sample
+      data['initials'].sample
     end
 
     def final_phrase
-      final_phrases.sample
+      data['finals'].sample
     end
 
     private
@@ -16,16 +13,12 @@ module Eliza
       YAML.load(initial_phrases_yaml_path.read)
     end
 
-    def initial_phrases_yaml_path
-      @initial_phrases_yaml_path ||= Pathname.new('lib/data/eliza_initials.yml')
+    def data_path
+      @data_path ||= Pathname.new('lib/data/data.yml')
     end
 
-    def final_phrases
-      YAML.load(final_phrases_yaml_path.read)
-    end
-
-    def final_phrases_yaml_path
-      @final_phrases_yaml_path ||= Pathname.new('lib/data/eliza_finals.yml')
+    def data
+      @data ||= YAML.load(data_path.read)
     end
   end
 end
