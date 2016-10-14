@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/tansengming/eliza-rb/badges/gpa.svg)](https://codeclimate.com/github/tansengming/eliza-rb)
+
 A Ruby implementation Joseph Weizenbaum's ELIZA, your friendly neighborhood robo Rogerian psychotherapist.
 
 # Installation
