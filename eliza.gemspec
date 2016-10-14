@@ -27,11 +27,12 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_development_dependency "awesome_print"
   spec.add_development_dependency "bundler"
+  spec.add_development_dependency "fuubar"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rb-readline"
   spec.add_development_dependency "rspec"
-  spec.add_development_dependency "awesome_print"
   spec.add_development_dependency "tapp"
-  spec.add_development_dependency "fuubar"
+  spec.add_development_dependency "wirble"
 end

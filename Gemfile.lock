@@ -30,6 +30,7 @@ GEM
     tapp (1.5.0)
       thor
     thor (0.19.1)
+    wirble (0.1.3)
 
 PLATFORMS
   ruby
@@ -43,6 +44,7 @@ DEPENDENCIES
   rb-readline
   rspec
   tapp
+  wirble
 
 BUNDLED WITH
    1.13.3
