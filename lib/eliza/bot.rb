@@ -1,10 +1,7 @@
 module Eliza
   class Bot
     def transform(input)
-      # TODO: try not do transform all the sentences
-      reply = Input.new(input).sentences.map(&:transform).compact.first
-
-      reply || 'Standard Reply'
+      reply_by_keyword(input) || reply_without_keyword
     end
 
     def initial_phrase
@@ -16,6 +13,15 @@ module Eliza
     end
 
     private
+    def reply_without_keyword
+      data['keywords'].find{|keyword| keyword['keyword'] == 'xnone' }['rules'].first['reasmb'].sample
+    end
+
+    # TODO: try not do transform all the sentences
+    def reply_by_keyword(input)
+      @reply_by_keyword ||= Input.new(input).sentences.map(&:transform).compact.first
+    end
+
     def data
       @data ||= Module.nesting.last.config.data
     end
