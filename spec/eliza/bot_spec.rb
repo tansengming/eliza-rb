@@ -1,4 +1,5 @@
 describe Eliza::Bot do
+  before { Eliza.config.reset }
   let(:bot) { described_class.new }
 
   describe '#transform' do
@@ -6,6 +7,12 @@ describe Eliza::Bot do
     context 'when input has a quit word' do
       let(:input) { 'Bye! its been good talking to you.' }
       it { should match /Goodbye/ }
+    end
+
+    context 'when there are not keywords' do
+      before { Eliza.configure {|config| config.data_path = 'spec/fixtures/data-basic.yml' } }
+      let(:input) { 'no keywords' }
+      it { should eq "I'm not sure I understand you fully." }
     end
   end
 

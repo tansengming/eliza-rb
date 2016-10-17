@@ -15,9 +15,24 @@ quit_words:
   - exit
   - quit
 keywords:
+  - keyword: xnone
+    rank: 0
+    rules:
+      - decomp: '*'
+        reasmb:
+          - I'm not sure I understand you fully.
+          - Please go on.
+          - What does that suggest to you ?
+          - Do you feel strongly about discussing such things ?
+          - That is interesting.  Please continue.
+          - Tell me more about that.
+          - Does talking about this bother you?
   - keyword: sorry
     rank: 0
     rules:
       - decomp: '*'
         reasmb:
           - Please don't apologise.
+          - Apologies are not necessary.
+          - I've told you that apologies are not required.
+          - It did not bother me. Please continue.

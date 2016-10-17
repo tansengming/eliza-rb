@@ -1,4 +1,10 @@
 keywords:
+  - keyword: xnone
+    rank: 0
+    rules:
+      - decomp: '*'
+        reasmb:
+          - I'm not sure I understand you fully.
   - keyword: sorry
     rank: 0
     rules:

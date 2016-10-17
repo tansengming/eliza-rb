@@ -1,12 +1,7 @@
 module Eliza
   class Bot
     def transform(input)
-      normalized_input = normalize_text(input)
-
-      # TODO: try not do transform all the sentences
-      reply = normalized_input.split('.').map{|text| Sentence.new(text) }.map(&:transform).compact.first
-
-      reply || 'Standard Reply'
+      reply_by_keyword(input) || reply_without_keyword
     end
 
     def initial_phrase
@@ -18,13 +13,13 @@ module Eliza
     end
 
     private
-    def normalize_text(text)
-      text.downcase
-          .gsub(/@#\$%\^&\*\(\)_\+=~`\{\[\}\]\|:;<>\/\\\t/, ' ')
-          .gsub(/\s+-+\s+/, '.')
-          .gsub(/\s*[,\.\?!;]+\s*/, '.')
-          .gsub(/\s*\bbut\b\s*/, '.')
-          .gsub(/\s{2,}/, ' ')
+    def reply_without_keyword
+      data['keywords'].find{|keyword| keyword['keyword'] == 'xnone' }['rules'].first['reasmb'].sample
+    end
+
+    # TODO: try not do transform all the sentences
+    def reply_by_keyword(input)
+      @reply_by_keyword ||= Input.new(input).sentences.map(&:transform).compact.first
     end
 
     def data
