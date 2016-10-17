@@ -18,7 +18,25 @@ module Eliza
 
     private
     def transform_by_rule
-      rule['reasmb'].sample
+      if replacements?
+        rule['reasmb'].sample.gsub(/\((\d+)\)/) do |match|
+          replacements[$1.to_i - 1]
+        end
+      else
+        rule['reasmb'].sample
+      end
+    end
+
+    def replacements
+      text.scan(/#{desamb_regex}/).first
+    end
+
+    def desamb_regex
+       rule['decomp'].gsub(/\*/, '(.*)')
+    end
+
+    def replacements?
+      replacements.size > 0
     end
 
     def rule
