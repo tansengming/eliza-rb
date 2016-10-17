@@ -26,11 +26,11 @@ module Eliza
     end
 
     def keyword
-      text[/\b(#{eliza_keywords.join('|')})\b/]
+      @keyword ||= eliza_keywords.find{|eliza_keyword| text[/\b#{eliza_keyword}\b/]}
     end
 
     def eliza_keywords
-      data['keywords'].map{|h| h['keyword'] }
+      @eliza_keywords ||= data['keywords'].sort_by{|keyword| keyword['rank'] }.reverse.map{|h| h['keyword'] }
     end
 
     def final_phrase

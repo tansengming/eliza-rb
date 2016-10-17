@@ -1,0 +1,21 @@
+keywords:
+  - keyword: xnone
+    rank: 0
+    rules:
+      - decomp: '*'
+        reasmb:
+          - I'm not sure I understand you fully.
+  - keyword: sorry
+    rank: 0
+    rules:
+      - decomp: '*'
+        reasmb:
+          - Please don't apologise.
+  - keyword: name
+    rank: 15
+    rules:
+      - decomp: '*'
+        reasmb:
+          - I am not interested in names.
+quit_words:
+  - bye

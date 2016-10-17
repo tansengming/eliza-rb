@@ -27,6 +27,13 @@ keywords:
           - That is interesting.  Please continue.
           - Tell me more about that.
           - Does talking about this bother you?
+  - keyword: name
+    rank: 15
+    rules:
+      - decomp: '*'
+        reasmb:
+          - I am not interested in names.
+          - I've told you before, I don't care about names -- please continue.
   - keyword: sorry
     rank: 0
     rules:
