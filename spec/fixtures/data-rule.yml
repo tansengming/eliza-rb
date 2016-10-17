@@ -1,0 +1,9 @@
+keywords:
+  - keyword: remember
+    rank: 5
+    rules:
+      - decomp: '* i remember *'
+        reasmb:
+          - Do you often think of \2?
+quit_words:
+  - bye

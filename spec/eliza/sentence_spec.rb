@@ -4,7 +4,15 @@ describe Eliza::Sentence do
 
   describe '#transform' do
     subject { sentence.transform }
-    context 'when input does not need a replacement' do
+
+    context 'when there are replacement rules' do
+      before { Eliza.configure {|config| config.data_path = 'spec/fixtures/data-rule.yml' } }
+
+      let(:text) { "I think I remember that bloody day" }
+      it { should eq "Do you often think of that bloody day?" }
+    end
+
+    context 'when there are no replacement rules' do
       before { Eliza.configure {|config| config.data_path = 'spec/fixtures/data-basic.yml' } }
 
       let(:text) { "So sorry about that." }
