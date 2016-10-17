@@ -19,7 +19,7 @@ module Eliza
     private
     def transform_by_rule
       if replacements?
-        rule['reasmb'].sample.gsub(/\((\d+)\)/) do |match|
+        rule['reasmb'].sample.gsub(/\\(\d+)/) do |match|
           replacements[$1.to_i - 1]
         end
       else
