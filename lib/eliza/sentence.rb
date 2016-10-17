@@ -27,13 +27,16 @@ module Eliza
       end
     end
 
-    def replacements
-      text.scan(/#{desamb_regex}/).first
-    end
-
+    # e.g. '* i remember *' -> '(.*) i remember (.*)'
     def desamb_regex
        rule['decomp'].gsub(/\*/, '(.*)')
     end
+
+    # e.g. 'i think i remember that'.scan'(.*) i remember (.*)' -> ['i think', 'that']
+    def replacements
+      text.scan(/#{desamb_regex}/).last
+    end
+
 
     def replacements?
       replacements.size > 0
