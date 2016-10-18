@@ -25,10 +25,6 @@ module Eliza
       end
     end
 
-    def replacements
-      replacement_rule.replacements_for(text)
-    end
-
     def default_rule
       rules.find{|rule| rule.default? }
     end
