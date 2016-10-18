@@ -1,6 +1,12 @@
 module Eliza
   class Bot
+    def initialize
+      @bye = false
+    end
+
     def transform(input)
+      @bye = Input.new(input).sentences.map(&:quit?).any?
+
       reply_by_keyword(input) || reply_without_keyword
     end
 
@@ -10,6 +16,10 @@ module Eliza
 
     def final_phrase
       data['finals'].sample
+    end
+
+    def bye?
+      @bye
     end
 
     private

@@ -6,6 +6,10 @@ module Eliza
       @text = text.downcase
     end
 
+    def quit?
+      data['quit_words'].find{|quit_word| text.include? quit_word }
+    end
+
     def transform
       if quit?
         final_phrase
@@ -53,10 +57,6 @@ module Eliza
 
     def final_phrase
       data['finals'].sample
-    end
-
-    def quit?
-      data['quit_words'].find{|quit_word| text.include? quit_word }
     end
 
     def data
