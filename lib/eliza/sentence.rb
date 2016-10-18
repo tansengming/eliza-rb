@@ -37,6 +37,8 @@ module Eliza
     def rules
       data['keywords'].find{|h| h['keyword'] == keyword}.fetch('rules')
                       .map{|rule| Rule.new(rule['decomp'], rule['reasmb']) }
+    rescue NoMethodError
+      raise "Could not find rules for '#{keyword}'!"
     end
 
     def keyword
