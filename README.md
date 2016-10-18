@@ -5,6 +5,8 @@
 
 A Ruby implementation Joseph Weizenbaum's ELIZA, your friendly neighborhood robo Rogerian psychotherapist.
 
+_This is a work in progress. The rules system needs a bit more optimization before it's ready for 1.0. In the meantime have fun and let me know how it goes._
+
 # Getting Started
 
 ## Installing
