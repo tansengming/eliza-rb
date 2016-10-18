@@ -1,0 +1,15 @@
+#! /usr/bin/env ruby
+
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require 'eliza'
+
+ELIZA_PRE = 'ELIZA: '
+USER_PRE  = 'YOU  : '
+
+eliza = Eliza::Bot.new
+
+puts ELIZA_PRE + eliza.initial_phrase
+while !eliza.bye?
+  input = gets
+  puts ELIZA_PRE + eliza.transform(input)
+end
