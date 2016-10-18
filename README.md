@@ -1,13 +1,17 @@
 [![Code Climate](https://codeclimate.com/github/tansengming/eliza-rb/badges/gpa.svg)](https://codeclimate.com/github/tansengming/eliza-rb)
 [![Test Coverage](https://codeclimate.com/github/tansengming/eliza-rb/badges/coverage.svg)](https://codeclimate.com/github/tansengming/eliza-rb/coverage)
 
+# ELIZA-rb
+
 A Ruby implementation Joseph Weizenbaum's ELIZA, your friendly neighborhood robo Rogerian psychotherapist.
 
-# Installation
+# Getting Started
+
+## Installing
 
 TBD
 
-# Usage
+## Usage
 
 ```ruby
 eliza   = Eliza::Bot.new
@@ -18,6 +22,17 @@ reply   = eliza.transform(input_string)
  # but you can also get a final phrase with:
  final  = eliza.final_phrase
 ```
+
+## Command Line Interface
+
+If you would like to try chatting with ELIZA you can start her up with the built-in CLI by running
+
+`./bin/eliza-rb`
+
+# Development
+
+## Approach
+
 
 # References
 
