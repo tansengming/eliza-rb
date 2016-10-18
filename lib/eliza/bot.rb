@@ -19,7 +19,7 @@ module Eliza
 
     # TODO: try not do transform all the sentences
     def reply_by_keyword(input)
-      @reply_by_keyword ||= Input.new(input).sentences.map(&:transform).compact.first
+      Input.new(input).sentences.map(&:transform).compact.first
     end
 
     def data
