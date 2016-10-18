@@ -4,6 +4,7 @@ require 'yaml'
 require "eliza/version"
 require "eliza/input"
 require "eliza/sentence"
+require 'eliza/rule'
 require "eliza/bot"
 
 module Eliza
