@@ -35,6 +35,25 @@ You can chat with ELIZA on the CLI by running:
 
 ## Approach
 
+ELIZA works by matching keywords and using those keywords to form replies by a rules based system.
+
+Let's say `forget` is a keyword with decomposition and reassembly rules that look like this:
+
+```yaml
+{
+  decomposition_pattern: "* i forget *"
+  reassembly_pattern: Can you think of why you might forget \2?
+}
+
+```
+
+If we start off with a sentence like:
+
+> What if I forget about the kettle?
+
+Applying the rules on it would create this reply:
+
+> Can you think of why you might forget about the kettle?
 
 # References
 
