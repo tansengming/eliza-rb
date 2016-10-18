@@ -20,7 +20,7 @@ module Eliza
     def transform_by_rule
       if replacement_rule
         replacement_rule.reassemble_for(text)
-      else
+      elsif default_rule
         default_rule.reassemble_for(text)
       end
     end
