@@ -5,11 +5,18 @@ describe Eliza::Sentence do
   describe '#transform' do
     subject { sentence.transform }
 
-    context 'when there are replacement rules' do
+    context 'when there is a replacement rule' do
       before { Eliza.configure {|config| config.data_path = 'spec/fixtures/data-rule.yml' } }
 
       let(:text) { "I think I remember that bloody day" }
       it { should eq "Do you often think of that bloody day?" }
+    end
+
+    context 'when there is are replacement rules' do
+      before { Eliza.configure {|config| config.data_path = 'spec/fixtures/data-rules.yml' } }
+
+      let(:text) { "do you remember that time in Bruges" }
+      it { should eq "Did you think I would forget that time in bruges?" }
     end
 
     context 'when there are no replacement rules' do

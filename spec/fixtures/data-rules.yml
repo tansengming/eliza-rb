@@ -1,0 +1,12 @@
+keywords:
+  - keyword: remember
+    rank: 5
+    rules:
+      - decomp: '* i remember *'
+        reasmb:
+          - Do you often think of \2?
+      - decomp: '* do you remember *'
+        reasmb:
+          - Did you think I would forget \2?
+quit_words:
+  - bye
