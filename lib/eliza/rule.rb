@@ -8,14 +8,10 @@ module Eliza
 
     # e.g. 'i think i remember that'.scan'(.*) i remember (.*)' -> ['i think', 'that']
     def replacements_for(text)
-      return [] if default?
-
       text.scan(/#{decompostion_regex}/).last || []
     end
 
     def reassemble_for(text)
-      return reassembly_patterns.sample if default?
-      
       reassembly_patterns.sample.gsub(/\\(\d+)/) do |_match|
         replacements_for(text)[$1.to_i - 1]
       end
@@ -28,6 +24,8 @@ module Eliza
     private
     # e.g. '* i remember *' -> '(.*) i remember (.*)'
     def decompostion_regex
+      return '^(.*)$' if default?
+
       decompostion_pattern.gsub(/^\*\s+/, '(.*)\b')
                           .gsub(/\s+\*/, ' (.*)')
     end

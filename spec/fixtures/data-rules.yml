@@ -8,5 +8,11 @@ keywords:
       - decomp: '* do you remember *'
         reasmb:
           - Did you think I would forget \2?
+  - keyword: i
+    rank: 0
+    rules:
+      - decomp: "*"
+        reasmb:
+        - Do you say \1 for some special reason?
 quit_words:
   - bye

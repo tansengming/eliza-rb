@@ -19,6 +19,13 @@ describe Eliza::Sentence do
       it { should eq "Did you think I would forget that time in bruges?" }
     end
 
+    context 'when the default rule has a replacement' do
+      before { Eliza.configure {|config| config.data_path = 'spec/fixtures/data-rules.yml' } }
+
+      let(:text) { "well I was listening to this song and she talked about it" }
+      it { should eq "Do you say well i was listening to this song and she talked about it for some special reason?" }
+    end
+
     context 'when there are no replacement rules' do
       before { Eliza.configure {|config| config.data_path = 'spec/fixtures/data-basic.yml' } }
 
