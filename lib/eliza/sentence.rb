@@ -34,11 +34,13 @@ module Eliza
     end
 
     def replacement_rule
-      rules.select{|rule| rule.replacements_for(text).any? }.sample
+      rules.select{|rule| rule.replacements_for(text).any? }
+           .sample
     end
 
     def rules
-      data['keywords'].find{|h| h['keyword'] == keyword}.fetch('rules').map{|rule| Rule.new(rule['decomp'], rule['reasmb']) }
+      data['keywords'].find{|h| h['keyword'] == keyword}.fetch('rules')
+                      .map{|rule| Rule.new(rule['decomp'], rule['reasmb']) }
     end
 
     def keyword
@@ -46,7 +48,9 @@ module Eliza
     end
 
     def eliza_keywords
-      @eliza_keywords ||= data['keywords'].sort_by{|keyword| keyword['rank'] }.reverse.map{|h| h['keyword'] }
+      @eliza_keywords ||= data['keywords'].sort_by{|keyword| keyword['rank'] }
+                                          .reverse
+                                          .map{|h| h['keyword'] }
     end
 
     def final_phrase
