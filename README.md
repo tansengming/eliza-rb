@@ -27,7 +27,7 @@ reply   = eliza.transform(input_string)
 
 ## Command Line Interface
 
-If you would like to try chatting with ELIZA you can start her up with the built-in CLI by running:
+You can try chatting with ELIZA on the CLI by running:
 
 `./bin/eliza-rb`
 
