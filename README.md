@@ -55,7 +55,7 @@ Applying the rules on it would create this reply:
 
 > Can you think of why you might forget **about the kettle**?
 
-# References
+## References
 
 - [Joseph Weizenbaum's ACM paper](https://www.csee.umbc.edu/courses/331/papers/eliza.html)
 - [mass:werk's Javascript implentation](http://www.masswerk.at/elizabot/)
