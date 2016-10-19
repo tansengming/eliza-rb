@@ -8,6 +8,9 @@ keywords:
       - decomp: '* do you remember *'
         reasmb:
           - Did you think I would forget \2?
+      - decomp: '*'
+        reasmb:
+          - Of course I remember
   - keyword: i
     rank: 0
     rules:

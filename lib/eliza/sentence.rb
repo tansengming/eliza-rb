@@ -35,6 +35,7 @@ module Eliza
 
     def replacement_rule
       rules.select{|rule| rule.replacements_for(text).any? }
+           .reject(&:grab_all?)
            .sample
     end
 

@@ -19,6 +19,13 @@ describe Eliza::Sentence do
       it { should eq "Did you think I would forget that time in bruges?" }
     end
 
+    context 'when only the grab all rule matches' do
+      before { Eliza.configure {|config| config.data_path = 'spec/fixtures/data-rules.yml' } }
+
+      let(:text) { "remember remember the fifth of november" }
+      it { should eq "Of course I remember" }
+    end
+
     context 'when the rules are missing' do
       before { Eliza.configure {|config| config.data_path = 'spec/fixtures/data-no-rules.yml' } }
 
