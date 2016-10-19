@@ -19,6 +19,15 @@ describe Eliza::Sentence do
       it { should eq "Did you think I would forget that time in bruges?" }
     end
 
+    context 'when the rules are missing' do
+      before { Eliza.configure {|config| config.data_path = 'spec/fixtures/data-no-rules.yml' } }
+
+      let(:text) { "do you remember that time in Bruges" }
+      it 'should raise a custom error' do
+        expect { subject }.to raise_error "Could not find rules for 'remember'!"
+      end
+    end
+
     context 'when the default rule has a replacement' do
       before { Eliza.configure {|config| config.data_path = 'spec/fixtures/data-rules.yml' } }
 

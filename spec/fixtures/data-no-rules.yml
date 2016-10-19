@@ -1,0 +1,6 @@
+keywords:
+  - keyword: remember
+    rank: 5
+    rules:
+quit_words:
+  - bye
