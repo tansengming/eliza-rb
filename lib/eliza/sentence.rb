@@ -24,13 +24,13 @@ module Eliza
     def transform_by_rule
       if replacement_rule
         replacement_rule.reassemble_for(text)
-      elsif default_rule
-        default_rule.reassemble_for(text)
+      elsif grab_all_rule
+        grab_all_rule.reassemble_for(text)
       end
     end
 
-    def default_rule
-      rules.find{|rule| rule.default? }
+    def grab_all_rule
+      rules.find{|rule| rule.grab_all? }
     end
 
     def replacement_rule

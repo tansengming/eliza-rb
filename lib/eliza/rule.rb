@@ -17,14 +17,14 @@ module Eliza
       end
     end
 
-    def default?
+    def grab_all?
       decompostion_pattern == '*'
     end
 
     private
     # e.g. '* i remember *' -> '(.*) i remember (.*)'
     def decompostion_regex
-      return '^(.*)$' if default?
+      return '^(.*)$' if grab_all?
 
       decompostion_pattern.gsub(/^\*\s+/, '(.*)\b')
                           .gsub(/\s+\*/, ' (.*)')
