@@ -49,11 +49,11 @@ Let's say `forget` is a keyword with decomposition and reassembly rules that loo
 
 If we start off with a sentence like:
 
-> What if I forget about the kettle?
+> **What if** I forget **about the kettle**?
 
 Applying the rules on it would create this reply:
 
-> Can you think of why you might forget about the kettle?
+> Can you think of why you might forget **about the kettle**?
 
 # References
 
