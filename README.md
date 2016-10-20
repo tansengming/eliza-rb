@@ -67,7 +67,7 @@ If we start off with a sentence like:
 
 > **What if** I forget **about the kettle**?
 
-Applying the rules on it would create this reply:
+Applying the rules would create this reply:
 
 > Can you think of why you might forget **about the kettle**?
 
