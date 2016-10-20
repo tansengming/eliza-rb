@@ -9,6 +9,8 @@ require "eliza/bot"
 
 module Eliza
   class Configuration
+    DEFAULT_DATA = {'posts' => {}, 'keywords' => {}, 'quit_words' => [] }
+
     attr_accessor :data_path
 
     def initialize
@@ -25,7 +27,7 @@ module Eliza
     end
 
     def data
-      @data ||= YAML.load(data_pathname.read)
+      @data ||= DEFAULT_DATA.merge(YAML.load(data_pathname.read))
     end
   end
 
