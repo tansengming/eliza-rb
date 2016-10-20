@@ -17,6 +17,11 @@ describe Eliza::Sentence do
 
       let(:text) { "do you remember that time in Bruges" }
       it { should eq "Did you think I would forget that time in bruges?" }
+
+      context 'when the replacement includes a pronoun' do
+        let(:text) { "I can't really sleep at night anymore" }
+        it { should eq "Do you say you can't really sleep at night anymore for some special reason?" }
+      end
     end
 
     context 'when only the grab all rule matches' do
@@ -39,7 +44,7 @@ describe Eliza::Sentence do
       before { Eliza.configure {|config| config.data_path = 'spec/fixtures/data-rules.yml' } }
 
       let(:text) { "well I was listening to this song and she talked about it" }
-      it { should eq "Do you say well i was listening to this song and she talked about it for some special reason?" }
+      it { should eq "Do you say well you were listening to this song and she talked about it for some special reason?" }
     end
 
     context 'when there are no replacement rules' do

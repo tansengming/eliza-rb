@@ -1,3 +1,14 @@
+posts:
+  am: are
+  your: my
+  me: you
+  myself: yourself
+  yourself: myself
+  i was: you were
+  i: you
+  you: I
+  my: your
+  i'm: you are
 keywords:
   - keyword: remember
     rank: 5
