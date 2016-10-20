@@ -7,7 +7,7 @@ A Ruby implementation Joseph Weizenbaum's ELIZA, your friendly neighborhood robo
 
 _This is a work in progress. The rules needs a bit more work before it's ready for 1.0. In the meantime have fun and let me know how it goes._
 
-This is what a typical conversation:
+This is what it looks like chatting with her,
 
 ```
 ELIZA: Please tell me what's been bothering you.
