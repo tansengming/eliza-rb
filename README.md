@@ -5,7 +5,23 @@
 
 A Ruby implementation Joseph Weizenbaum's ELIZA, your friendly neighborhood robo Rogerian psychotherapist.
 
-_This is a work in progress. The rules system needs a bit more optimization before it's ready for 1.0. In the meantime have fun and let me know how it goes._
+_This is a work in progress. The rules needs a bit more work before it's ready for 1.0. In the meantime have fun and let me know how it goes._
+
+This is what a typical conversation:
+
+```
+ELIZA: Please tell me what's been bothering you.
+I have problems sleeping every night. 
+ELIZA: That's quite interesting.
+It's not really interesting. More bothersome than anything. 
+ELIZA: What does that suggest to you?
+I think it means that I've been having bad dreams. 
+ELIZA: You say you think it means that you've been having bad dreams?
+Yes, exactly. 
+ELIZA: I understand.
+But how can you? You're a computer!
+ELIZA: What about machines worries you?
+```
 
 # Getting Started
 
