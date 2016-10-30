@@ -1,3 +1,4 @@
+require 'ostruct'
 require 'pathname'
 require 'yaml'
 
