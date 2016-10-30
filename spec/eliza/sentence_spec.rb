@@ -65,5 +65,10 @@ describe Eliza::Sentence do
       let(:text) { 'Bye! its been good talking to you.' }
       it { should match /Goodbye/ }
     end
+
+    context 'when the quit word is part of another word' do
+      let(:text) { 'I liked rockabye baby' }
+      it { should_not match /Goodbye/ }
+    end
   end  
 end

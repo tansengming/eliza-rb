@@ -7,7 +7,7 @@ module Eliza
     end
 
     def quit?
-      data.quit_words.find{|quit_word| text.include? quit_word }
+      data.quit_words.find{|quit_word| text[/\b#{quit_word}\b/] }
     end
 
     def transform
