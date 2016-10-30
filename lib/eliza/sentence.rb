@@ -7,7 +7,7 @@ module Eliza
     end
 
     def quit?
-      data['quit_words'].find{|quit_word| text.include? quit_word }
+      data.quit_words.find{|quit_word| text.include? quit_word }
     end
 
     def transform
@@ -40,7 +40,7 @@ module Eliza
     end
 
     def rules
-      data['keywords'].find{|h| h['keyword'] == keyword}.fetch('rules')
+      data.keywords.find{|h| h['keyword'] == keyword}.fetch('rules')
                       .map{|rule| Rule.new(rule['decomp'], rule['reasmb']) }
     rescue NoMethodError
       raise "Could not find rules for '#{keyword}'!"
@@ -51,13 +51,13 @@ module Eliza
     end
 
     def eliza_keywords
-      @eliza_keywords ||= data['keywords'].sort_by{|keyword| keyword['rank'] }
-                                          .reverse
-                                          .map{|h| h['keyword'] }
+      @eliza_keywords ||= data.keywords.sort_by{|keyword| keyword['rank'] }
+                                       .reverse
+                                       .map{|h| h['keyword'] }
     end
 
     def final_phrase
-      data['finals'].sample
+      data.finals.sample
     end
 
     def data
