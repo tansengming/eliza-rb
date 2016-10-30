@@ -10,7 +10,7 @@ module Eliza
     # e.g. 'i think i remember that'.scan'(.*) i remember (.*)' -> ['i think', 'that']
     def replacements_for(text)
       (text.scan(/#{decompostion_regex}/).last || []).map do |replacement|
-        data['posts'].find {|from, to| replacement.gsub!(/\b#{from}\b/, to) }
+        data.posts.find {|from, to| replacement.gsub!(/\b#{from}\b/, to) }
         replacement
       end
     end

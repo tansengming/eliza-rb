@@ -11,11 +11,11 @@ module Eliza
     end
 
     def initial_phrase
-      data['initials'].sample
+      data.initials.sample
     end
 
     def final_phrase
-      data['finals'].sample
+      data.finals.sample
     end
 
     def bye?
@@ -24,7 +24,7 @@ module Eliza
 
     private
     def reply_without_keyword
-      data['keywords'].find{|keyword| keyword['keyword'] == 'xnone' }['rules'].first['reasmb'].sample
+      data.keywords.find{|keyword| keyword['keyword'] == 'xnone' }['rules'].first['reasmb'].sample
     end
 
     # TODO: try not do transform all the sentences

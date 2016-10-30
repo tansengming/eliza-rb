@@ -27,7 +27,11 @@ module Eliza
     end
 
     def data
-      @data ||= DEFAULT_DATA.merge(YAML.load(data_pathname.read))
+      @data ||= OpenStruct.new(
+                  DEFAULT_DATA.merge(
+                    YAML.load(data_pathname.read)
+                  )
+                )
     end
   end
 
