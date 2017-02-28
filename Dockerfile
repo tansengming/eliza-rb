@@ -9,7 +9,5 @@ WORKDIR /app
 # Copy the main application.
 COPY . ./
 
-# The main command to run when the container starts. Also 
-# tell the Rails dev server to bind to all interfaces by 
-# default.
+# The main command to run when the container starts.
 CMD ["./bin/eliza-rb"]
