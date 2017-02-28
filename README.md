@@ -47,6 +47,13 @@ You can chat with ELIZA on the CLI by running:
 
 `./bin/eliza-rb`
 
+## Docker
+
+If you already have Docker installed, here's how you can get started:
+
+- `docker build -t eliza-rb github.com/tansengming/eliza-rb`
+- `docker run -it eliza-rb`
+
 # Development
 
 ## Approach
